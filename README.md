@@ -1,1 +1,1 @@
-# context-aware-rag-chat
+# Context aware RAG chat demo
