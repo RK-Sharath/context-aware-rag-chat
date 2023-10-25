@@ -1,0 +1,13 @@
+ibm-generative-ai
+ibm-generative-ai[langchain]
+langchain==0.0.322
+PyPDF2
+unstructured
+pdf2image
+pdfminer.six 
+sentence-transformers 
+faiss-cpu   
+flask 
+streamlit==1.27.0
+tiktoken==0.3.1
+tokenizers==0.13.3
