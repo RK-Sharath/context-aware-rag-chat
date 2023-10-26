@@ -138,7 +138,9 @@ def main():
         creds = Credentials(api_key=genai_api_key, api_endpoint=genai_api_url)
         params = GenerateParams(decoding_method=decoding_method, temperature=temperature, max_new_tokens=maximum_new_tokens, min_new_tokens=minimum_new_tokens, repetition_penalty=repetition_penalty, top_k=top_k, top_p=top_p)
         llm=LangChainInterface(model="meta-llama/llama-2-70b-chat", params=params, credentials=creds)
-        pre_prompt = """[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n<</SYS>>\n\nGenerate the next agent response by answering the question. You are provided several documents with titles. If you cannot answer the question from the given documents, please state that you do not have an answer.\n"""
+        pre_prompt = """[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n<</SYS>>\n\nGenerate the next agent 
+        response by answering the question. You are provided several documents with titles. If you cannot answer the question from the 
+        given documents, please state that you do not have an answer.\n"""
         prompt = pre_prompt + "CONTEXT:\n\n{context}\n" +"Question : {question}" + "[\INST]"
         ll_prompt = PromptTemplate(template=prompt, input_variables=["context", "question"])
         chain = ConversationalRetrievalChain.from_llm(llm, retriever, combine_docs_chain_kwargs={"prompt": ll_prompt}, return_source_documents=False)
