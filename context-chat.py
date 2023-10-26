@@ -24,7 +24,6 @@ from langchain.prompts import PromptTemplate
 st.title('Context aware Retriever Augmented Generation Demo powered by IBM Watsonx')
 st.caption("This demo is prepared by Sharath Kumar RK, Senior Data Scientist, IBM Watsonx team")
 st.subheader("Ask questions about your document")
-#st.session_state.sidebar = True
 
 
 genai_api_url = st.sidebar.text_input("GenAI API URL", type="password", value="https://bam-api.res.ibm.com/v1")
