@@ -13,8 +13,6 @@ from langchain.chains import QAGenerationChain
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.embeddings import HuggingFaceEmbeddings
-#from langchain.embeddings import HuggingFaceInstructEmbeddings
-#from langchain.vectorstores import Chroma
 from langchain.vectorstores import FAISS
 from langchain.chains import ConversationalRetrievalChain
 from langchain.prompts import PromptTemplate
@@ -140,7 +138,7 @@ def main():
         llm=LangChainInterface(model="meta-llama/llama-2-70b-chat", params=params, credentials=creds)
         pre_prompt = """[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n<</SYS>>\n\nGenerate the next agent 
         response by answering the question. You are provided several documents with titles. If you cannot answer the question from the 
-        given documents, please state that you do not have an answer.\n"""
+        given documents, please state I don't know.\n"""
         prompt = pre_prompt + "CONTEXT:\n\n{context}\n" +"Question : {question}" + "[\INST]"
         ll_prompt = PromptTemplate(template=prompt, input_variables=["context", "question"])
         chain = ConversationalRetrievalChain.from_llm(llm, retriever, combine_docs_chain_kwargs={"prompt": ll_prompt}, return_source_documents=False)
