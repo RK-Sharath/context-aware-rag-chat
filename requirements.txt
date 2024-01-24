@@ -1,6 +1,6 @@
 ibm-generative-ai==0.1.19
 ibm-generative-ai[langchain]
-langchain==0.0.322
+langchain==0.0.354
 PyPDF2
 unstructured
 pdf2image
