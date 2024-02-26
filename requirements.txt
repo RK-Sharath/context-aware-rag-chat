@@ -1,4 +1,5 @@
 ibm-generative-ai==2.1.1
+sentence-transformers
 ibm-generative-ai[langchain]
 langchain==0.0.354
 PyPDF2
