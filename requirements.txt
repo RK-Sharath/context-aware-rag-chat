@@ -1,4 +1,4 @@
-ibm-generative-ai
+ibm-generative-ai==0.1.19
 sentence-transformers
 ibm-generative-ai[langchain]
 langchain>=0.0.322
