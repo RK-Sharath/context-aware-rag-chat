@@ -2,6 +2,7 @@ from genai.extensions.langchain import LangChainInterface
 from genai.schemas import GenerateParams
 from genai.model import Credentials
 import os
+import PyPDF2
 import random
 import itertools
 import streamlit as st
