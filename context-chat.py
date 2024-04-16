@@ -24,7 +24,7 @@ st.caption("This demo is prepared by Sharath Kumar RK, Senior Data Scientist, IB
 st.subheader("Ask questions about your document")
 
 
-genai_api_url = st.sidebar.text_input("GenAI API URL", type="password", value="https://bam-api.res.ibm.com/v2")
+genai_api_url = st.sidebar.text_input("GenAI API URL", type="password", value="https://bam-api.res.ibm.com/v2/text/generation?version=2023-11-22")
 model = 'meta-llama/llama-2-70b-chat'
 chunk_size = st.sidebar.number_input("Select chunk size", value=1000)
 chunk_overlap = st.sidebar.number_input("Select chunk overlap", value=0)
