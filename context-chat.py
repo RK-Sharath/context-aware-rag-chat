@@ -1,5 +1,5 @@
 from genai.extensions.langchain import LangChainInterface
-from genai.schemas import TextGenerationParameters
+from genai.schema import TextGenerationParameters
 from genai.model import Credentials
 import os
 import PyPDF2
