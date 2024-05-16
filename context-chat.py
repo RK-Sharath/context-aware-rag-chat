@@ -1,6 +1,6 @@
 from genai.extensions.langchain import LangChainInterface
 from genai.schema import TextGenerationParameters
-from genai.model import Credentials
+from genai import Client, Credentials
 import os
 import PyPDF2
 import random
@@ -135,7 +135,7 @@ def main():
         genai_api_key=st.session_state.genai_api_key
         creds = Credentials(api_key=genai_api_key, api_endpoint=genai_api_url)
         params = TextGenerationParameters(decoding_method=decoding_method, temperature=temperature, max_new_tokens=maximum_new_tokens, min_new_tokens=minimum_new_tokens, repetition_penalty=repetition_penalty, top_k=top_k, top_p=top_p)
-        llm=LangChainInterface(model="meta-llama/llama-2-70b-chat", params=params, credentials=creds)
+        llm=LangChainInterface(model="meta-llama/llama-2-70b-chat", parameters=params, client=Client(credentials=creds))
         pre_prompt = """[INST] <<SYS>>\nYou are a helpful, respectful and honest assistant.\n<</SYS>>\n\nGenerate the next agent 
         response by answering the question. You are provided several documents with titles. If you cannot answer the question from the 
         given documents, please state I don't know.\n"""
