@@ -25,7 +25,7 @@ st.subheader("Ask questions about your document")
 
 
 genai_api_url = st.sidebar.text_input("GenAI API URL", type="password", value="https://bam-api.res.ibm.com")
-model = 'meta-llama/llama-2-70b-chat'
+model = 'ibm-meta/llama-2-70b-chat-q'
 chunk_size = st.sidebar.number_input("Select chunk size", value=1000)
 chunk_overlap = st.sidebar.number_input("Select chunk overlap", value=0)
 maximum_new_tokens = st.sidebar.number_input("Select max tokens", value=500)
