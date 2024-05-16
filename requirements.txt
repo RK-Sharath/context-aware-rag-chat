@@ -1,6 +1,6 @@
 ibm-generative-ai
 ibm-generative-ai[langchain]
-langchain>=0.1.9
+langchain
 unstructured
 sentence-transformers 
 faiss-cpu   
